@@ -4,6 +4,16 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './page/Home.vue'
 import Result from './page/Result.vue'
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
+import { FaChevronLeft, FaChevronRight, FaDownload, BiDownload } from 'oh-vue-icons/icons'
+
+
+addIcons(
+  FaChevronLeft,
+  FaChevronRight,
+  FaDownload, 
+  BiDownload
+)
 
 const routes = [
     {
@@ -12,25 +22,10 @@ const routes = [
     }, {
         path : '/result/:uuid', 
         component : Result,
-        async beforeEnter(to, from, next) {
-        const { uuid } = to.params
-        try {
-            const res = await fetch(`https://api.example.com/result/${uuid}`)
-            if (!res.ok) throw new Error('Data not found')
-            const data = await res.json()
-            if (data) {
-            next() 
-            } else {
-            next('/') 
-            }
-        } catch (err) {
-            next('/') 
-        }
-        }
-    }
+    },
 ]
 const router =  createRouter({
     history : createWebHistory(), 
     routes
 })
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).component('v-icon', OhVueIcon).mount('#app')
