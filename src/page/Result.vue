@@ -112,5 +112,8 @@ const downloadPhoto = async (url, filename = 'photo.jpg') => {
     <p class="mt-4 text-xs text-baby-blue text-center bg-dark-blue w-fit rounded-2xl p-2 px-5">
       Photo akan terhapus otomatis setelah 7 hari
     </p>
+    <p class="mt-4 text-xs text-baby-blue text-center bg-dark-blue w-fit rounded-2xl p-2 px-5">
+      Share your moments and tag @dbooth.photo
+    </p>
   </div>
 </template>

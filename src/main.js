@@ -23,6 +23,10 @@ const routes = [
         path : '/result/:uuid', 
         component : Result,
     },
+     {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  }
 ]
 const router =  createRouter({
     history : createWebHistory(), 
